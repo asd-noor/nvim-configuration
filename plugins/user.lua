@@ -9,4 +9,22 @@ return {
   --     require("lsp_signature").setup()
   --   end,
   -- },
+  -- {
+  --   "leoluz/nvim-dap-go",
+  --   config = function()
+  --     require("dap-go").setup {
+  --       -- delve = {},
+  --       dap_configurations = {
+  --         type = "go",
+  --         name = "klikit serve",
+  --         request = "launch",
+  --         mode = "auto",
+  --         program = "${workspaceFolder}",
+  --         args = {"serve"},
+  --         -- dlvFlags = 
+  --         -- env = 
+  --       },
+  --     }
+  --   end,
+  -- },
 }

@@ -54,6 +54,32 @@ return {
     },
   },
 
+  dap = {
+    adapters = {
+      delve = {
+        type = "server",
+        port = '${port}',
+        -- command = "dlv"
+        executable = {
+          command = "dlv",
+          args = {'dap', '-l', '127.0.0.1:${port}'},
+        },
+      },
+    },
+    configurations = {
+      go = {
+        {
+          type = "delve",
+          name = "klikit serve",
+          request = "launch",
+          mode = "auto",
+          program = "${workspaceFolder}",
+          args = {"serve"}
+        }
+      }
+    },
+  },
+
   -- Configure require("lazy").setup() options
   lazy = {
     defaults = { lazy = true },
